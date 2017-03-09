@@ -7,7 +7,8 @@ namespace Graficas
     public class MainForm : Form
     {
         PictureBox pb;
-        Pantalla miPantalla;
+        private Pantalla miPantalla;
+        private Juego juego;
         private void misControles()
         {
             pb=new PictureBox();
@@ -25,12 +26,12 @@ namespace Graficas
             misControles();
 
 
-            miPantalla=new Pantalla(pb);
             Controls.Add (pb);
-            Graphics g = miPantalla.obtenerG();
-            g.Clear(Color.White);
-            g.DrawLine(Pens.Black,0,0,10,10);
-            miPantalla.actualizar();
+            miPantalla=new Pantalla(pb);
+            juego = new Juego(miPantalla);
+            juego.pintar();
+
+
         }    
     }
 }

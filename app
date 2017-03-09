@@ -4,3 +4,4 @@
 Program.cs
 MainForm.cs
 Pantalla.cs
+Juego.cs
