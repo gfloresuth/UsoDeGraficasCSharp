@@ -3,3 +3,4 @@
 -out:bin/Graficas.exe
 Program.cs
 MainForm.cs
+Pantalla.cs
