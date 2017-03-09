@@ -15,8 +15,14 @@ namespace Graficas
         {
             Graphics g = _pantalla.obtenerG();
             g.Clear(Color.White);
+            g.DrawLine(Pens.Blue,0,0,100,100);
             _pantalla.actualizar();
             
+        }
+
+        public void logica()
+        {
+
         }
 
     }
