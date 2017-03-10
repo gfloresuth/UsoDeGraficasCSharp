@@ -4,22 +4,31 @@ using System.Windows.Forms;
 
 namespace Graficas
 {
-    public class Enemigo : DatosVisuales, IObjetoVisual
+    public class Enemigo : IObjetoVisual
     {
-        public Enemigo(int x, int y) : base (x,y,32,32)
+        public Rectangle rect;
+        public int direccion;
+        public Enemigo(int x, int y)
         {
-
+            rect=new Rectangle(x,y,32,32);
+            direccion=5;
         }
         public void pintar(Graphics g)
         {
-            g.FillRectangle(Brushes.Red,_x,_y,_ancho,_alto);
+            g.FillRectangle(Brushes.Red,rect);
         }
         public void logica()
         {
-            _x++;
-            if (_x>100)
+            rect.X+=direccion;
+            if (rect.X>200)
             {
-                _x=0;
+                rect.X=200;
+                direccion = -5;
+            }
+            if (rect.X<0)
+            {
+                rect.X=0;
+                direccion = 5;
             }
         }
     }

@@ -7,5 +7,4 @@ Pantalla.cs
 Juego.cs
 IObjetoVisual.cs
 Jugador.cs
-DatosVisuales.cs
 Enemigo.cs
