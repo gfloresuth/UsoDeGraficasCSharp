@@ -6,10 +6,10 @@ namespace Graficas
 {
     public class DatosVisuales
     {
-        protected int _x;
-        protected int _y;
-        protected int _ancho;
-        protected int _alto;
+        public int _x;
+        public int _y;
+        public int _ancho;
+        public int _alto;
         public DatosVisuales(int x, int y, int ancho, int alto)
         {
             _x=x;

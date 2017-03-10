@@ -14,7 +14,7 @@ namespace Graficas
         {
             pb=new PictureBox();
             timer1=new Timer();
-            timer1.Interval=100;
+            timer1.Interval=35;
             
             this.Size=new Size(350,350);
 
@@ -22,22 +22,23 @@ namespace Graficas
             pb.Location= new Point(0,0);
             pb.BackColor = Color.Black;
             timer1.Tick += timer1_Tick;
-            
+            Controls.Add (pb);
+
 
 
         }
         private void timer1_Tick(Object sender, EventArgs e)
         {
             timer1.Stop();
-
+            juego.logica();
+            juego.pintar();
             timer1.Start();
         }
         public MainForm ()
         {
             misControles();
 
-
-            Controls.Add (pb);
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.DoubleBuffer, true);
             miPantalla=new Pantalla(pb);
             juego = new Juego(miPantalla);
             juego.pintar();
